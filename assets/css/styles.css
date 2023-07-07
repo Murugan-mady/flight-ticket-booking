@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Bad+Script&family=Dancing+Script:wght@700&family=Nova+Oval&display=swap');
+html
+{
+	background-image:url("/img/home.png");
+	background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+h2{
+	font-family:Dancing Script;
+}
+h1
+{
+	font-family:Bad Script;
+}
+button {
+	margin-top: 30%;
+	margin-right: 5%;
+	margin-left: 5%;
+	border-radius: 20px;
+	font-family: Nova Oval;
+	font-size:large;
+	height: 40px;
+	width: 90px;
+	background-color: #AACB73;
+}
+	button:hover {
+		transform: scale(1.1);
+		background-color: #CDE990;
+	}

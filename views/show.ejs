@@ -1,0 +1,43 @@
+<!--include header -->
+<%- include('include/header.ejs') %>
+
+		<nav>
+				<h2>It's time for adventure..<h2>
+			<div id="right">
+			<ul>
+				<li><a href="/">Log out</a></li>
+				<p style="display:none;" name="mail" value="<%=mail%>"></p>
+			</ul>
+			</div>
+		</nav>
+
+		<div id="result">
+		<h4><%=message%></h4>
+			<div id="flights">
+			<table class="flights">
+				<tr>
+					<th>S.No.</th>
+					<th>Flight</th>
+					<th>Departure</th>
+					<th>Reach(hrs)</th>
+					<th>Seats</th>
+					<th>Book</th>
+				</tr>
+				<%let i=1;%>
+				<%table.forEach(function(row){%>
+				<tr>
+					<td><%=i%></td>
+					<td><%=row['flight']%></td>
+					<td><%=row['departure']%></td>
+					<td><%=row['reach']%></td>
+					<td><%=row['seats']%></td>
+					<td><a href="/login/search/book"><button type="submit">Book</button></a></td>
+				</tr>
+				<%i=i+1;%>
+				<%});%>
+			</table>
+			</div>
+		</div>
+
+<!--include footer -->
+<%- include('include/footer.ejs') %>

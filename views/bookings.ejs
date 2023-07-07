@@ -1,0 +1,40 @@
+<!--include header -->
+<%- include('include/header.ejs') %>
+
+		<nav>
+				<h2>It's time for adventure..<h2>
+			<div id="right">
+			</div>
+		</nav>
+
+		<div id="result">
+			<div id="flights">
+			<table class="flights">
+				<tr>
+					<th>S.No.</th>
+					<th>Flight</th>
+					<th>Source</th>
+					<th>Destination</th>
+					<th>Departure</th>
+					<th>Date</th>
+					<th>Booked date</th>
+				</tr>
+				<%let i=1;%>
+				<%table.forEach(function(row){%>
+				<tr>
+					<td><%=i%></td>
+					<td><%=row['flight']%></td>
+					<td><%=row['source']%></td>
+					<td><%=row['destination']%></td>
+					<td><%=row['departure']%></td>
+					<td><%=row['date']%></td>
+					<td><%=row['booked_date']%></td>
+				</tr>
+				<%i=i+1;%>
+				<%});%>
+			</table>
+			</div>
+		</div>
+
+<!--include footer -->
+<%- include('include/footer.ejs') %>

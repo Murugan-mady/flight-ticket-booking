@@ -1,0 +1,21 @@
+html {
+    background-image: url("/img/clouds.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+form {
+    background-color: #F8E8EE;
+    width: 20%;
+    margin-top: 15%;
+    margin-left: 35%;
+    padding-left: 5%;
+    padding-top: 1%;
+    padding-right: 5%;
+    padding-bottom: 3%;
+    display: grid;
+    align-items: center;
+    border-radius: 40px;
+}

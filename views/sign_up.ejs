@@ -1,0 +1,21 @@
+<!--include header -->
+<%- include('include/header.ejs') %>
+
+		<div href="/login" id="login">
+			<form action="/sign_up" method="post">
+			<h1 style="text-align:center;">Sign Up</h1>
+			<p style="color:red;"><%=message%></p>
+			<label>User Name</label>
+			<input type="text" name="uname" placeholder="Your Name"><br><br>
+			<label>User Mail-ID :</label>
+			<input type="email" name="mail" placeholder="Mail ID"><br><br>
+			<label>Password :</label>
+			<input type="Password" name="password" placeholder="Password"><br><br>
+			<label>Confirm Password :</label>
+			<input type="Password" name="password2" placeholder="Re-eneter Password"><br><br>
+			<button type="submit" name="submit" >Sign Up</button>
+			</form>
+		</div>
+
+<!--include footer -->
+<%- include('include/footer.ejs') %>
