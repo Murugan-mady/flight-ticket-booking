@@ -6,12 +6,13 @@
 				<p style="display:none;" name="mail" value=<%=mail%>></p>
 			<div id="right">
 			<ul>
-				<li><a href="/login/search/my_bookings">My Bookings</a></li>
+				<li><a href="/login/search/my_bookings?token=<%=token%>&mail=<%=mail%>">My Bookings</a></li>
 				<li><a href="/">Log out</a></li>
 			</ul>
 			</div>
 		</nav>
 		<div id="booking">
+		<p style="color: #F3AA60;" name="booked_message"><%=booked_message%></p>
 			<form action"/login/search/book" method="post">
 				<label>Source</label>
 				<select name="source">
@@ -26,7 +27,7 @@
 					<%});%>
 				</select><br><br>
 				<label>Date</label>
-				<input type="Date" id="date" value="2002-06-16" name="date"><br><br>
+				<input type="Date" id="date" name="date"><br><br>
 				<label>Time</label>
 				<input type="time" name="time" value="00:00"><br><br>
 				<button type="submit" name="submit">Search</button>
