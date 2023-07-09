@@ -1,6 +1,7 @@
 # flight-ticket-booking
 The application can be used to perform following activities:
 
+
 a)User Cases=>
 
    i)Login using mail id and password
@@ -14,6 +15,7 @@ a)User Cases=>
    v)View list of user's booking history
    
    vi) Logout
+
 
 b)Admin cases:
 
