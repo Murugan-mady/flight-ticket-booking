@@ -1,6 +1,10 @@
 const routes = require('../model/routes.js');
 const bookings = require('../model/bookings.js');
 exports.show = async function (req, res) {
+    if (!req.session.data) { 
+        res.redirect('/');
+        return;
+    }
     console.log("entered");
     const source = req.body.source;
     const dest = req.body.destination;

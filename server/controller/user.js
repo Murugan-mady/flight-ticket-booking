@@ -1,5 +1,4 @@
 var userdbs = require('../model/user.js');
-const jwt = require('jsonwebtoken');
 // userdb operations : login and signup
 exports.validate = function(req, res) {
     var mail = req.body.mail;
@@ -14,8 +13,9 @@ exports.validate = function(req, res) {
     else {
         userdbs.findOne({ mail: mail }).then(user => {
             if (user.password == String(pwd)) {
-                var token = jwt.sign({ mail: mail ,exp:5}, 'letmein');
-                res.redirect('/login/success?token='+token+'&mail='+mail);
+                req.session.data = mail;
+                console.log(req.session.data);
+                res.redirect('/login/success?mail='+mail);
                 return;
             }
             else {
@@ -54,12 +54,8 @@ exports.create = function(req, res) {
                 }
                 const new_usr = new userdbs({ name: name, mail: mail_id, password: pwd });
                 new_usr.save().then(saveduser => {
-                    airports.find().then(array => {
-                        var token = jwt.sign({ mail: mail_id,exp:5000}, 'letmein');
-                        res.redirect('/login/success?token=' + token+'&mail='+mail_id);
-                    }).catch(err => {
-                        console.log(err);
-                    });
+                        req.session.data = mail_id;
+                        res.redirect('/login/success?mail='+mail_id);
                 }).catch(err => {
                     console.log(err);
                     res.render("sign_up.ejs", { title: title, css: css, js: js, message: "Some error occured!" });

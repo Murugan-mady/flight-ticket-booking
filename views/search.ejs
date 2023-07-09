@@ -3,17 +3,19 @@
 		
 		<nav>
 				<h2>It's time for adventure..<h2>
-				<p style="display:none;" name="mail" value=<%=mail%>></p>
 			<div id="right">
 			<ul>
-				<li><a href="/login/search/my_bookings?token=<%=token%>&mail=<%=mail%>">My Bookings</a></li>
-				<li><a href="/">Log out</a></li>
+				<li>
+					<a href="/login/search/bookings?mail=<%=mail%>">My Bookings</a>
+				</li>
+				<li><a href="/logout">Log out</a></li>
 			</ul>
 			</div>
 		</nav>
 		<div id="booking">
 		<p style="color: #F3AA60;" name="booked_message"><%=booked_message%></p>
-			<form action"/login/search/book" method="post">
+			<form action"/login/success" method="post">
+			<input type="hidden" name="mail" value="<%=mail%>">
 				<label>Source</label>
 				<select name="source">
 					<%airports.forEach(function(place){%>
