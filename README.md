@@ -13,7 +13,7 @@ Bookings made are maintained in a table which includes : name & mail of booked u
 The application can be used to perform following activities:
 
 
-# a)User Cases:
+## a)User Cases:
 
    i)Login using mail id and password
    
@@ -30,11 +30,13 @@ The application can be used to perform following activities:
 
 ## b)Admin cases:
 
-    i) Admin can add flight details - it require number of airports in the route
-    ii)Admin can delete flight details
+    i) Admin can add flight details - it require code of flight, name of flight, number of airports in the route(from initial to final point), departure time and airport name(it should be in the format of <CODE>-<AIRPORT>). 
+    ii)Admin can delete flight details by using flight code.
+    iii) Admin can view bookings of a flight between 2 dates using flight code, from date and to date
+    iv) Logout
 
 
-Development details:
+# Development details:
 
 The web application was built using the following web technologies :
 
@@ -42,8 +44,17 @@ The web application was built using the following web technologies :
         
         ii)CSS
         
-        iii)NodeJS
+        iii)Javascript
         
-        iv)EJS
+        iv)NodeJS
         
-        v)MongoDB
+        v)EJS
+        
+        vi)MongoDB (queries handled by mongoose js)
+
+# Sample credentials:
+    a) User: mail->  muruganzataak@gmail.com , password-> 1234
+    b) Admin: mail-> muruganzataak@gmail.com , password-> adminonly
+
+# Hosted Live link:
+https://express-airlines.onrender.com
