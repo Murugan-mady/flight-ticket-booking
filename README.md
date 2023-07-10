@@ -32,13 +32,13 @@ The application can be used to perform following activities:
 
 #  Tested functinalities:
 
-   i) User can't move to a route directly without login
-   ii)The available flights are calculated if there exists any possible path.
-   iii) User can see their past bookings.
-   iv)User can book the flight.
-   v)User can logout
-   vi)Admin can logout
-   vii) Admin can view bookings based on date and flight code.
+      i) User can't move to a route directly without login
+      ii)The available flights are calculated if there exists any possible path.
+      iii) User can see their past bookings.
+      iv)User can book the flight.
+      v)User can logout
+      vi)Admin can logout
+      vii) Admin can view bookings based on date and flight code.
 
 
 # Development details:
