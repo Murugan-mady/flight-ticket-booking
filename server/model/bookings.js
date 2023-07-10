@@ -9,5 +9,5 @@ var schema = new mongoose.Schema({
     destination: String,
     departure: String
 });
-const bookings = mongoose.model('bookings', schema);
+const bookings = mongoose.model('bookings', schema,'bookings');
 module.exports =bookings;

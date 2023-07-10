@@ -1,21 +1,62 @@
-html {
-    background-image: url("/img/clouds.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+
+body {
+    background: linear-gradient(to bottom, #0575E6, #021B79);
+    font-family: Arial, sans-serif;
+    color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-form {
-    background-color: #F8E8EE;
-    width: 20%;
-    margin-top: 15%;
-    margin-left: 35%;
-    padding-left: 5%;
-    padding-top: 1%;
-    padding-right: 5%;
-    padding-bottom: 3%;
-    display: grid;
-    align-items: center;
-    border-radius: 40px;
+.container {
+    max-width: 400px;
+    margin: 100px auto;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 }
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 16px;
+    color: #468B97;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    font-size: 16px;
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    button:active {
+        background-color: #3e8e41;
+    }

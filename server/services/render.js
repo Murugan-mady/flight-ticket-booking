@@ -12,10 +12,18 @@ exports.login = function (req, res) {
 	var title = "Login";
 	var css = "/css/login.css";
 	var js = "";
-	var message = "";
+	var message = "Enter your login credentials";
 	res.render('login.ejs', { title: title, css: css, js: js,message:message });
 
 }
+
+exports.admin = function (req, res) {
+	var title = "Admin Login";
+	var css = "/css/admin.css";
+	var js = "";
+	var message = "Enter admin credentials";
+	res.render('admin.ejs', { title: title, css: css, js: js, message: message });
+};
 
 exports.sign_up = function (req, res) {
 	var title = "Sign Up";
@@ -61,7 +69,7 @@ exports.bookings = function (req, res) {
 			result.push(data);
 		});
 		if (result.length > 0) { msg='Your bookings are:' }
-		res.render('bookings.ejs', { table: result, title: "Express Airlines", css: "bookings.css", js: "", message: msg });
+		res.render('bookings.ejs', { table: result, title: "Express Airlines", css: "/css/bookings.css", js: "", message: msg });
 	}).catch(err => {console.log(err) });
 }
 

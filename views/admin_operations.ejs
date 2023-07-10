@@ -1,0 +1,94 @@
+<!--include header -->
+<%- include('include/header.ejs') %>
+
+
+  <nav>
+    <div class="logo">
+      <i class="fas fa-plane"></i>
+      <span>Express Airlines</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section class="options">
+
+    <div class="option">
+	  <i class="fas fa-plus"></i>
+      <h2>Add Flights</h2>
+      <p>Enter new flights to DB</p>
+      <a href="" class="btn" id="add">Add</a>
+    </div>
+    <div class="option">
+		<i class="fas fa-trash-alt"></i>
+      <h2>Delete Flights</h2>
+      <p>Delete records of Flights</p>
+      <a  href="" class="btn" id="delete">Delete</a>
+    </div>
+    <div class="option">
+	  <i class="fas fa-search-location"></i>
+      <h2>Bookings</h2>
+      <p>List Out all bookings</p>
+      <a href="" class="btn" id="view">View</a>
+    </div>
+  </section>
+  
+  <div style="display:none;" id="container">
+    <h2>ENTER FLIGHT DETAILS</h2>
+    <form id="AddForm" action="/admin/add" method="post">
+      <div class="form-group">
+	    <label >Code : </label>
+		<input type="text" name="code" placeholder="Flight Code" required><br>
+		</div>
+		<div class="form-group">
+		<label >Name :</label>
+		<input type="text" name="name" placeholder="Flight Name" required><br>
+		</div>
+		<div class="form-group">
+        <label >Number of airports :</label>
+        <input type="number" name="num" id="numberInput" min="1" max="10" required><br>
+      </div>
+	  <div class="form-group">
+	  <a id="ok">Add airports</a>
+	  </div>
+	  <div class="form-group">
+      <button type="submit" hidden="true" id="submit" onclick="alert('submitted');">Add Flight</button>
+	  </div>
+    </form>
+  </div>
+  
+  <div style="display:none;" id="container2">
+    <h2>Enter code to delete flight records</h2>
+    <form action="/admin/delete" method="post" id="delForm">
+      <div class="form-group">
+        <input type="text" id="textInput" name="code" required>
+        <label for="textInput">Enter Flight code</label>
+        <span class="bar"></span>
+      </div>
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+  
+  <div style="display:none;" id="container3">
+    <h2>Enter details to view bookings</h2>
+    <form action="/admin/view" method="post" id="viewForm">
+      <div class="form-group">
+        <label for="nameInput">Code</label>
+        <input type="text" id="nameInput" name="code" placeholder="Enter Flight Code" required>
+      </div>
+      <div class="form-group">
+        <label for="startDateInput">Start Date</label>
+        <input type="date" id="startDateInput" name="strt_date" placeholder="From Date" required>
+      </div>
+      <div class="form-group">
+        <label for="endDateInput">End Date</label>
+        <input type="date" id="endDateInput" name="end_date" placeholder="To Date" required>
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
+
+<!--include footer -->
+<%- include('include/footer.ejs') %>

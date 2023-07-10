@@ -5,5 +5,5 @@ var schema =new mongoose.Schema({
     password: String
     });
 
-const Userdb = mongoose.model('users', schema);
+const Userdb = mongoose.model('users', schema,'users');
 module.exports = Userdb;

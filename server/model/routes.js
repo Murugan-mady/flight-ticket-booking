@@ -4,5 +4,5 @@ var schema = new mongoose.Schema({
     route: [String],
     departure:[String]
 });
-const routes = mongoose.model('routes', schema);
+const routes = mongoose.model('routes', schema,'routes');
 module.exports = routes;

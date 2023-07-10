@@ -1,41 +1,51 @@
 <!--include header -->
 <%- include('include/header.ejs') %>
 		
-		<nav>
-				<h2>It's time for adventure..<h2>
-			<div id="right">
-			<ul>
-				<li>
-					<a href="/login/search/bookings?mail=<%=mail%>">My Bookings</a>
-				</li>
-				<li><a href="/logout">Log out</a></li>
-			</ul>
-			</div>
-		</nav>
-		<div id="booking">
-		<p style="color: #F3AA60;" name="booked_message"><%=booked_message%></p>
-			<form action"/login/success" method="post">
-			<input type="hidden" name="mail" value="<%=mail%>">
-				<label>Source</label>
-				<select name="source">
+		  <header>
+    <nav>
+      <div class="logo">
+        <i class="fas fa-plane"></i>
+        <span>Express Airlines</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="/login/search/bookings?mail=<%=mail%>">My Bookings</a></li>
+        <li><a href="/logout">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <h1 style="color:#63707E;">Search for Flight</h1>
+	<p style="color: #fcff57;" name="booked_message"><%=booked_message%></p>
+    <form action"/login/success" method="post">
+	<input type="hidden" name="mail" value="<%=mail%>">
+      <div class="form-group">
+        <label for="source">Source</label>
+        <select name="source">
 					<%airports.forEach(function(place){%>
 					<option><%=place.name%></option>
 					<%});%>
-				</select><br><br>
-				<label>Destination:</label>
-				<select name="destination">
+				</select>
+      </div>
+      <div class="form-group">
+        <label for="destination">Destination</label>
+        <select name="destination">
 					<%airports.forEach(function(place){%>
 					<option><%=place.name%></option>
 					<%});%>
-				</select><br><br>
-				<label>Date</label>
-				<input type="Date" id="date" name="date"><br><br>
-				<label>Time</label>
-				<input type="time" name="time" value="00:00"><br><br>
-				<button type="submit" name="submit">Search</button>
-				
-			</form>
-		</div>
+				</select>
+      </div>
+      <div class="form-group">
+        <label for="date">Date</label>
+        <input type="date" name="date" required>
+      </div>
+      <div class="form-group">
+        <label for="time">Time</label>
+        <input type="time" name="time" value="00:00" required>
+      </div>
+      <button type="submit">Search Now</button>
+    </form>
+  </div>
 
 <!--include footer -->
 <%- include('include/footer.ejs') %>

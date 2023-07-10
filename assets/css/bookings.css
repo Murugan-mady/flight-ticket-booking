@@ -1,71 +1,90 @@
-* {
-    margin: 0px;
-}
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css");
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
-a {
-    color: #AEE2FF;
-    text-decoration: none;
-}
-
-#result {
-    background-color: #C2DEDC;
-    height: 55%;
-    padding-top: 20%;
-}
-
-h2 {
-    width: 50%;
-    color: #ffffff;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
 nav {
-    background-color: #116A7B;
+    background-color: #333;
+    color: #fff;
     display: flex;
-    position: sticky;
+    justify-content: space-between;
     align-items: center;
-    justify-content: center;
-    top: 0px;
-    cursor: pointer;
-    padding-left: 20px;
-    padding-top: 15px;
-    padding-bottom: 5px;
+    padding: 10px 20px;
 }
 
-#right {
-    float: right;
-    text-align: right;
-    padding-right: 20px;
-    margin-right: 0px;
+.logo {
+    display: flex;
+    align-items: center;
+    font-family: Pacifico;
+    font-size: 30px
 }
 
-ul {
-    list-style-type: none;
+    .logo i {
+        color: #fff;
+        margin-right: 5px;
+    }
+
+.nav-links {
+    list-style: none;
     display: flex;
 }
 
-li {
-    padding-left: 26px;
-    font-size: 65%;
+nav ul li a:hover {
+    color: #FFE4A7;
 }
 
-#flights {
-    max-height: 100px;
-    overflow: auto;
+.nav-links li {
+    margin-left: 20px;
 }
 
-td, th {
-    padding: 5px;
-    width: 100px;
-    border-style: double;
+.nav-links a {
+    color: #FFFAD7;
+    text-decoration: none;
+}
+
+header {
+    background-image: linear-gradient(to bottom right, #000000, #4E4FEB, #068FFF);
+    color: #fff;
     text-align: center;
+    padding: 50px 0;
 }
 
-tr {
-    background-color: #ECF8F9;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
 }
 
-.flights {
+.message {
+    background-color: #A7EDE7;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
     align-items: center;
-    margin-left: 30%;
-    margin-bottom: 0px;
+    margin-bottom: 30px;
+}
+
+    .message i {
+        color: #333;
+        margin-right: 10px;
+    }
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #FFE4A7;
+    color: #333;
 }

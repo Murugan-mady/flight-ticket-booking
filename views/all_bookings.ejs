@@ -1,0 +1,40 @@
+<!--include header -->
+<%- include('include/header.ejs') %>
+
+<div class="container">
+    <h2><%=message%></h2>
+    <table>
+      <thead>
+        <tr>
+		  <th>S.No.</th>
+          <th>Name</th>
+          <th>Mail</th>
+          <th>Source</th>
+          <th>Destination</th>
+          <th>Flight</th>
+          <th>Date</th>
+          <th>Booked Date</th>
+          <th>Departure</th>
+        </tr>
+      </thead>
+      <tbody>
+	  <%for(let i=1;i<=table.length;i++){%>
+        <tr>
+          <td><%=i%></td>
+		  <td><%=table[i-1]['name']%></td>
+          <td><%=table[i-1]['mail']%></td>
+          <td><%=table[i-1]['source']%></td>
+          <td><%=table[i-1]['destination']%></td>
+          <td><%=table[i-1]['flight']%></td>
+          <td><%=table[i-1]['date']%></td>
+          <td><%=table[i-1]['booked_date']%></td>
+          <td><%=table[i-1]['departure']%></td>
+        </tr>
+		<%}%>
+        <!-- Add more rows as needed -->
+      </tbody>
+    </table>
+  </div>
+
+<!--include footer -->
+<%- include('include/footer.ejs') %>

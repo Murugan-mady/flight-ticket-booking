@@ -2,27 +2,37 @@
 <%- include('include/header.ejs') %>
 
 		<nav>
-				<h2>It's time for adventure..<h2>
-			<div id="right">
-			<ul>
-				<li><a href="/logout">Log out</a></li>
-			</ul>
-			</div>
-		</nav>
-				
-		<div id="result">
-		<h4><%=message%></h4>
-			<div id="flights">
-			<table class="flights">
-				<tr>
-					<th>S.No.</th>
-					<th>Flight</th>
-					<th>Departure</th>
-					<th>Reach(hrs)</th>
-					<th>Seats</th>
-					<th>Book</th>
-				</tr>
-				<%let i=1;%>
+    <div class="logo">
+      <i class="fas fa-plane"></i>
+      <span>Express Airlines</span>
+    </div>
+    <ul>
+      <li><a href="/logout">Logout</a></li>
+    </ul>
+  </nav>
+
+  <header>
+    <h1>It's time to get your hands on some adventure</h1>
+  </header>
+
+  <section class="content">
+    <div class="message">
+      <p><%=message%></p>
+    </div>
+
+    <table>
+      <thead>
+        <tr>
+            <th>S.No.</th>
+		    <th>Flight</th>
+			<th>Departure</th>
+			<th>Reach(hrs)</th>
+			<th>Seats</th>
+			<th>Action</th>
+        </tr>
+      </thead>
+	  <tbody>
+	  <%let i=1;%>
 				<%table.forEach(function(row){%>
 				<form action="/login/search/book" method="post">
 				<input type="hidden" name="mail" value=<%=mail%>>
@@ -31,20 +41,21 @@
 				<input type="hidden" name="date" value=<%=date%>>
 				<input type="hidden" name="flight" value=<%=row['flight']%>>
 				<input type="hidden" name="departure" value=<%=row['departure']%>>
-				<tr>
-					<td><%=i%></td>
+        <tr>
+          <td><%=i%></td>
 					<td ><%=row['flight']%></td>
 					<td ><%=row['departure']%></td>
 					<td ><%=row['reach']%></td>
 					<td ><%=row['seats']%></td>
-					<td ><button type="submit">Book</button></td>
-				</tr>
-				<%i=i+1;%>
-				</form>
-				<%});%>
-			</table>
-			</div>
-		</div>
+					<td ><button class="btn" type="submit">Book</button></td>
+        </tr>
+		<%i=i+1;%>
+		</form>
+		<%});%>
+        <!-- Add more rows if needed -->
+      </tbody>
+    </table>
+  </section>
 
 <!--include footer -->
 <%- include('include/footer.ejs') %>
