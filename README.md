@@ -1,5 +1,5 @@
-# flight-ticket-booking
-#Database
+# Flight-ticket-booking
+# Database
 This is a flight ticket booking application. It maintains records of past bookings and details about flight and route it takes daily.
 The flights are assumed to take same routes everyday.
 The user details are maintained in user table.(mail and password)
@@ -9,10 +9,11 @@ The flight details in a separate table include its code and name.
 Airport details are maintained in separate table which has code and name of airport.
 Bookings made are maintained in a table which includes : name & mail of booked user, source, destination, flight code, date of journey, date on which user booked and departure time.
 
+# Features
 The application can be used to perform following activities:
 
 
-a)User Cases=>
+# a)User Cases:
 
    i)Login using mail id and password
    
@@ -27,7 +28,7 @@ a)User Cases=>
    vi) Logout
 
 
-b)Admin cases:
+## b)Admin cases:
 
     i) Admin can add flight details - it require number of airports in the route
     ii)Admin can delete flight details
