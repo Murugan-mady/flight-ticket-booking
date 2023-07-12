@@ -39,6 +39,14 @@ The application can be used to perform following activities:
       v)User can logout
       vi)Admin can logout
       vii) Admin can view bookings based on date and flight code.
+      viii)Admin can add flight by including the following details:
+                  a)Flight code
+                  b)Flight name
+                  c)Number of Airports in the flight route( include the count thought it revisit the same airport on same day )
+                  d) Airport Name (it should be in the format of code and airport name separated by '-'. Eg: MDU-Madurai)
+                  e)Departure time from the airport to next destination
+      ix) Admin can delete the flight using flight code.
+      x)Admin can't add an existing flight.
 
 
 # Development details:
