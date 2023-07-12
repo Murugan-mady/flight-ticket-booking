@@ -83,13 +83,13 @@ exports.delete = function (req, res) {
     var curr_date = new Date();
     bookings.countDocuments({ code: code, date: { $gte: curr_date } }).then(count => {
         if (count == 0) {
-            flights.findAndDeleteOne({ code: code }).then(del => {
+            flights.findOneAndDelete({ code: code }).then(del => {
                 if (!del) {
                     res.send('No flight exist');
                     return;
                 }
                 else {
-                    routes.findAndDeleteOne().then(rout => {
+                    routes.findOneAndDelete().then(rout => {
                         res.send('Deleted flight successfully');
                         return;
                     }).catch(err => { console.log(err); });
@@ -118,8 +118,8 @@ exports.view = function (req, res) {
             data['name'] = booking[i].name;
             data['mail'] = booking[i].mail;
             data['flight'] = booking[i].flight;
-            data['date'] = d.getDate() + "-" + d.getMonth() + "-" + d.getFullYear();
-            data['booked_date'] = bd.getDate() + "-" + bd.getMonth() + "-" + bd.getFullYear();
+            data['date'] = d.getDate() + "-" + (d.getMonth()+1) + "-" + d.getFullYear();
+            data['booked_date'] = bd.getDate() + "-" + (bd.getMonth()+1) + "-" + bd.getFullYear();
             data['departure'] = booking[i].departure;
             data['source'] = booking[i].source;
             data['destination'] = booking[i].destination;
